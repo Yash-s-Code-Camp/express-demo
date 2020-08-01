@@ -1,6 +1,6 @@
 # express-demo
 
-## Use this commands to start this app on your machine
+## Use these commands to start this app on your machine
 
 ```cmd
 $ git clone https://github.com/Yash-s-Code-Camp/express-demo.git
