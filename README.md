@@ -11,7 +11,7 @@ $ npm install
 > Change your password in connection string
 
 ```javascript
-mongoose.connect('mongodb+srv://yashdesai:<PASSWORD>@cluster0-bnurt.gcp.mongodb.net/express-demo', () => {
+mongoose.connect('mongodb+srv://<username>:<PASSWORD>@cluster0-bnurt.gcp.mongodb.net/express-demo', () => {
     console.log(`Connected to db`)
 })
 ```
