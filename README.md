@@ -16,5 +16,5 @@ mongoose.connect('mongodb+srv://<username>:<PASSWORD>@cluster0-bnurt.gcp.mongodb
 })
 ```
 ```cmd
-$ node index
+$ npm start
 ```
