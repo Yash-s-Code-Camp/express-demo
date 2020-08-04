@@ -18,8 +18,7 @@ app.get('/', (req, res) => {
     res.send(`<h1>Home Page</h1>`)
 })
 
-
-mongoose.connect('mongodb+srv://<username>:<PASSWORD>@cluster0-bnurt.gcp.mongodb.net/express-demo', () => {
+mongoose.connect('mongodb+srv://yashdesai:pcyyoN2WzU0rrXQx@cluster0-bnurt.gcp.mongodb.net/express-demo', () => {
     console.log(`Connected to db`)
 })
 app.listen(port, () => {

@@ -22,9 +22,6 @@ router.post('/add', (req, res) => {
     student.save().then(data => {
         res.send("Student added." + (data))
     })
-
-
 })
-
 
 module.exports = router
