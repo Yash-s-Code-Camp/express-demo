@@ -6,7 +6,9 @@ const router = express.Router()
 
 router.get('/all', (req, res) => {
     // todo fetch all students from db
-    res.send(`working`)
+    const students = Student.find({ "age": 54 }).then(data => {
+        res.send((data[0].age).toString())
+    })
 })
 router.get('/id/:id', (req, res) => {
     // todo fetch a single student with particular id from db
