@@ -6,8 +6,8 @@ const router = express.Router()
 
 router.get('/all', (req, res) => {
     // todo fetch all students from db
-    const students = Student.find({ "age": 54 }).then(data => {
-        res.send((data[0].age).toString())
+    const students = Student.find().then(data => {
+        res.send(data[1].age.toString())
     })
 })
 router.get('/id/:id', (req, res) => {

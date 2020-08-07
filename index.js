@@ -18,9 +18,13 @@ app.get('/', (req, res) => {
     res.send(`<h1>Home Page</h1>`)
 })
 
-mongoose.connect('mongodb+srv://yashdesai:0ar7ja2d0YSApyeC@cluster0-bnurt.gcp.mongodb.net/express-demo', () => {
-    console.log(`Connected to db`)
-})
+try {
+    mongoose.connect('', () => {
+        console.log(`Connected to db`)
+    })
+} catch{
+    console.log(`errr`)
+}
 
 app.listen(port, () => {
     console.log(`Server  strated at ${port}`)
