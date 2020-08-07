@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 })
 
 try {
-    mongoose.connect('', () => {
+    mongoose.connect('mongodb+srv://yashdesai:hUD4qK2FcGB3Qu2W@cluster0-bnurt.gcp.mongodb.net/express-demo', () => {
         console.log(`Connected to db`)
     })
 } catch{

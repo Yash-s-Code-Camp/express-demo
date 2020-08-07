@@ -6,11 +6,15 @@ const router = express.Router()
 
 
 router.get('/all', (req, res) => {
-    // todo fetch all teachers from db
-    res.send(`working........`)
+    const teachers = Teacher.find().then(data => {
+        res.send(data)
+    })
 })
 router.get('/id/:id', (req, res) => {
     // todo fetch a single teacher with particular id from db
+    const teachers = Teacher.find({ "_id": req.params.id }).then(data => {
+        res.send(data)
+    })
 })
 router.post('/add', (req, res) => {
     // todo post/add the teachers data via json body

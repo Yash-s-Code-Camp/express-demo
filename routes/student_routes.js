@@ -12,6 +12,9 @@ router.get('/all', (req, res) => {
 })
 router.get('/id/:id', (req, res) => {
     // todo fetch a single student with particular id from db
+    const students = Student.find({ "_id": req.params.id }).then(data => {
+        res.send(data)
+    })
 })
 router.post('/add', (req, res) => {
     // todo post/add the students data via json body
