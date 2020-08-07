@@ -8,10 +8,10 @@ $ cd express-demo
 $ npm install
 ```
 
-> Change your username and password in connection string
+> Change your username, password, db_location and db_name in connection string
 
 ```javascript
-mongoose.connect('mongodb+srv://<username>:<PASSWORD>@cluster0-bnurt.gcp.mongodb.net/express-demo', () => {
+mongoose.connect('mongodb+srv://<username>:<password>@<db_location>/<db_name>', () => {
     console.log(`Connected to db`)
 })
 ```
