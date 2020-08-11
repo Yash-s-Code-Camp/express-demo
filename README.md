@@ -7,6 +7,13 @@ $ git clone https://github.com/Yash-s-Code-Camp/express-demo.git
 $ cd express-demo
 $ npm install
 ```
+
+> If you have already cloned it then use this command to update
+
+```sh
+$ git pull origin
+```
+
 > Create a file 'db.js' in root directory and write following code
 
 ```javascript
