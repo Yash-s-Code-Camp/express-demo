@@ -28,3 +28,24 @@ module.exports = db
 ```cmd
 $ npm start
 ```
+
+
+> API end-points
+
+```
+[GET] - /students/all
+[GET] - /students/id/:id
+
+[GET] - /teacher/all
+[GET] - /students/id/:id
+
+[POST] - /students/add
+[POST] - /teachers/add
+
+[PUT] - /students/id/:id
+[PUT] - /teachers/id/:id
+
+[DELETE] - /students/id/:id
+[DELETE] - /teachers/id/:id
+
+```
