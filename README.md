@@ -2,7 +2,7 @@
 
 ## Use these commands to start this app on your machine
 
-```cmd
+```sh
 $ git clone https://github.com/Yash-s-Code-Camp/express-demo.git
 $ cd express-demo
 $ npm install
@@ -25,7 +25,7 @@ module.exports = db
 
 > To run the server
 
-```cmd
+```sh
 $ npm start
 ```
 
