@@ -7,14 +7,24 @@ $ git clone https://github.com/Yash-s-Code-Camp/express-demo.git
 $ cd express-demo
 $ npm install
 ```
-
-> Change your username, password, db_location and db_name in connection string
+> Create a file 'db.js' in root directory and write following code
 
 ```javascript
-mongoose.connect('mongodb+srv://<username>:<password>@<db_location>/<db_name>', () => {
-    console.log(`Connected to db`)
+const db = {
+
+    //Replace with your username, password, cluster and db_name
+    username: '<username>',
+    pass: '<password>',
+    cluster: '<cluster>',
+    database: '<db_name>'
+}
+
+module.exports = db
 })
 ```
+
+
+
 ```cmd
 $ npm start
 ```

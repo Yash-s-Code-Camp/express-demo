@@ -27,6 +27,31 @@ router.post('/add', (req, res) => {
         res.send("teacher added." + (data))
     })
 })
+router.put('/id/:id', (req, res) => {
+
+    if (!req.body.name && !req.body.age) {
+        res.status(400).send(`body is empty`)
+    }
+    else {
+
+        const teacher = Teacher.findByIdAndUpdate(req.params.id, {
+            name: req.body.name,
+            subject: req.body.subject
+        }).then((data) => {
+            res.send(`successfully updated: ${req.params.id}`)
+        }).catch(e => {
+            res.send(e).statusCode(500)
+        })
+    }
+})
+
+router.delete('/id/:id', (req, res) => {
+    const teacher = Teacher.findByIdAndDelete(req.params.id).then((data) => {
+        res.send(`successfully deleted: ${req.params.id}`)
+    }).catch(e => {
+        res.send(e).statusCode(500)
+    })
+})
 
 
 module.exports = router
