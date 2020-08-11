@@ -27,7 +27,6 @@ const db = {
 }
 
 module.exports = db
-})
 ```
 
 > To run the server
