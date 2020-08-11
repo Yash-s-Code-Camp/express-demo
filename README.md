@@ -29,7 +29,6 @@ module.exports = db
 $ npm start
 ```
 
-
 > API end-points
 
 ```
