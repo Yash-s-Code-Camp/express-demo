@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 try {
     mongoose.connect(`mongodb+srv://${db.username}:${db.pass}@${db.cluster}/${db.database}`, () => {
-        console.log(`Connected to db..`)
+        console.log(`Connected to db`)
     })
 } catch{
     console.log(`errr`)
