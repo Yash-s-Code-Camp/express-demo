@@ -23,13 +23,15 @@ app.get('/', (req, res) => {
     res.send(`<h1>Home Page</h1>`)
 })
 
+
 try {
     mongoose.connect(`mongodb+srv://${db.username}:${db.pass}@${db.cluster}/${db.database}`, () => {
-        console.log(`Connected to db`)
+        console.log(`Connected to db..`)
     })
 } catch{
     console.log(`errr`)
 }
+
 
 app.listen(port, () => {
     console.log(`Server  strated at ${port}`)
