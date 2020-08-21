@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Admin | Lucky</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="../index.html">Lucky<span
+        style="margin-left: 5px;"><small>Boutiques</small></span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tel:+918128999299">Contact Us</a>
+        </li>
+      </ul>
+      <form action="../search.html" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>ADMIN</h1>
+    <form method="POST">
+      <div class="form-group">
+        <input type="text" class="form-control" id="title" placeholder="Title" required>
+      </div>
+      <div class="form-group">
+        <label for="desc">Description</label>
+        <textarea class="form-control" name="desc" name="desc" id="desc" cols="20" rows="5"></textarea>
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" id="old_price" placeholder="Old Price ₹">
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" id="new_price" placeholder="New Price ₹">
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" id="qty" placeholder="Qty.">
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" name="chkSize" type="checkbox" id="chkS" value="S">
+        <label class="form-check-label" for="chkS">S</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" name="chkSize" type="checkbox" id="chkM" value="M">
+        <label class="form-check-label" for="chkM">M</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" name="chkSize" type="checkbox" id="chkL" value="L">
+        <label class="form-check-label" for="chkL">L</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" name="chkSize" type="checkbox" id="chkXL" value="XL">
+        <label class="form-check-label" for="chkL">XL</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" name="chkSize" type="checkbox" id="chk2XL" value="2XL">
+        <label class="form-check-label" for="chkL">2XL</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" name="chkSize" type="checkbox" id="chk3XL" value="3XL">
+        <label class="form-check-label" for="chkL">3XL</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" name="chkSize" type="checkbox" id="chkFree" value="Free Size">
+        <label class="form-check-label" for="chkFree">Free Size</label>
+      </div>
+      <div class="form-group">
+        <label for="featureImage">Feature Image</label>
+        <input id="featureImage" class="form-control" name="featureImage" type="file" accept="image/*,capture=camera"
+          required>
+      </div>
+      <div class="form-group">
+        <label for="image1">Image 1</label>
+        <input id="image1" class="form-control" name="image1" type="file" accept="image/*,capture=camera">
+      </div>
+      <div class="form-group">
+        <label for="image2">Image 2</label>
+        <input id="image2" class="form-control" name="image2" type="file" accept="image/*,capture=camera">
+      </div>
+      <div class="form-group">
+        <label for="image3">Image 3</label>
+        <input id="image3" class="form-control" name="image3" type="file" accept="image/*,capture=camera">
+      </div>
+      <div class="form-group">
+        <label for="image4">Image 4</label>
+        <input id="image4" class="form-control" name="image4" type="file" accept="image/*,capture=camera">
+      </div>
+
+      <button class="btn btn-primary form-control" type="submit" id="btnadd">Add Product</button>
+
+      <hr>
+
+      <div id="productTable">
+
+      </div>
+
+      <table class="table-responsive table-bordered">
+        <thead>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th></th>
+          <th></th>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+
+      </table>
+
+    </form>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+
+
+  <!-- firebase -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-auth.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-analytics.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAz8Kq1ilcmOHBhUyWuqYIHT3NVSqKvvKA",
+      authDomain: "lucky-f75f8.firebaseapp.com",
+      databaseURL: "https://lucky-f75f8.firebaseio.com",
+      projectId: "lucky-f75f8",
+      storageBucket: "lucky-f75f8.appspot.com",
+      messagingSenderId: "620966441167",
+      appId: "1:620966441167:web:a4196eb54660c25a30c7ba",
+      measurementId: "G-BN4T8WTG4H"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+  </script>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

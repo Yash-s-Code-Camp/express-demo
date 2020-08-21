@@ -1,0 +1,61 @@
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+<!-- firebase -->
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-analytics.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAz8Kq1ilcmOHBhUyWuqYIHT3NVSqKvvKA",
+    authDomain: "lucky-f75f8.firebaseapp.com",
+    databaseURL: "https://lucky-f75f8.firebaseio.com",
+    projectId: "lucky-f75f8",
+    storageBucket: "lucky-f75f8.appspot.com",
+    messagingSenderId: "620966441167",
+    appId: "1:620966441167:web:a4196eb54660c25a30c7ba",
+    measurementId: "G-BN4T8WTG4H"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+
+
+<script>
+  var db = firebase.firestore();
+
+  function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  };
+
+  //example
+  var id = getUrlParameter('id');
+
+
+
+  db.collection("products").doc(id).delete().then(async function () {
+    await console.log("Document successfully deleted!");
+    window.history.back();
+  }).catch(function (error) {
+    console.error("Error removing document: ", error);
+  });
+
+</script>
